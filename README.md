@@ -16,31 +16,31 @@ Things you may want to cover:
 ## userテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false|
+|id|string|null: false|
 |nickname|text|null: false|
 |email|text|null: false , unique: true|
 |password|text|null: false|
 ### Association
-- has_many :user_groups, through: :groups
+- has_many :groups, through: :user_groups
 - has_many :posts
 
 
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false|
+|id|string|null: false|
 |name|string|null: false , unique: true|
 ### Association
-- has_many :user_groups, through: :users
+- has_many :users, through: :user_groups
 - has_many :posts
 
 
 ## user_groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false|
-|user_id|integer|null: false , foreign_key: true|
-|group_id|integer|null: false , foreign_key: true|
+|id|string|null: false|
+|user_id|string|null: false , foreign_key: true|
+|group_id|string|null: false , foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :group
@@ -49,11 +49,11 @@ Things you may want to cover:
 ## postテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false|
+|id|string|null: false|
 |message|text||
 |image|string||
-|user_id|integer|null: false|
-|group_id|integer|null: false|
+|user_id|string|null: false, foreign_key: true|
+|group_id|string|null: false, foreign_key: true|
 |timestamp|timestamp|null: false|
 ### Association
 - belongs_to :user
