@@ -21,18 +21,18 @@ Things you may want to cover:
 |email|text|null: false , unique: true|
 |password|text|null: false|
 ### Association
-- has_many :user_group
-- has_many :post
+- has_many :user_groups, through: :groups
+- has_many :posts
 
 
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|group_name|text|null: false , unique: true|
+|name|string|null: false , unique: true|
 ### Association
-- has_many :user_group
-- has_many :post
+- has_many :user_groups, through: :users
+- has_many :posts
 
 
 ## user_groupテーブル
@@ -50,8 +50,8 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|post_message|VARCHAR|null: false|
-|post_image|MEDIUMBLOB||
+|message|text||
+|image|string||
 |user_id|integer|null: false|
 |group_id|integer|null: false|
 |timestamp|timestamp|null: false|
