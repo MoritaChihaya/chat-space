@@ -1,0 +1,27 @@
+.Chat
+ .header
+  .left-box
+   %p.--group-name test
+   %p.--group-member Member:masa
+  .right-box
+   = link_to "#", class: "edit-btn" do 
+    Edit
+ .massages
+  .massage
+   .upper-info
+    %p.--user-name masa,1
+    %p.--posting-date 2019/11/20(Wed) 17:43:01
+   %p.--text おはよう！,1
+  .massage
+   .upper-info
+    %p.--user-name masa,1
+    %p.--posting-date 2019/11/20(Wed) 17:43:01
+   %p.--text おはよう！,1
+ .form
+  %form.new-message
+   .text-area
+    %input.text{:name => "text", :placeholder => "type a message", :type => "text", :value => ""}/
+    %label.image
+     = icon('far', 'image')
+    %input.hidden{:name => "picture", :placeholder => "type a message", :type => "file", :value => ""}/
+   %input.send-btn{:type => "submit", :value => "Send"}
