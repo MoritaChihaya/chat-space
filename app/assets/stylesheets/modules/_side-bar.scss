@@ -1,0 +1,54 @@
+.Side-bar {
+  width: 300px;
+  height: 100%;
+  .left-header{
+    height: 100px;
+    background-color:#253141;
+    display: flex;  
+    .box{
+      width: 260px;
+      height: 20px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      line-height: 20px;
+        .user-name{
+        color: $white;
+        font-size: $side_header_font;
+        font-weight: bold;
+      }
+        .menu{
+        width: 60px;
+        display: flex;
+        justify-content: flex-end;
+        .new-group{
+          padding-left: 5px;
+        }  
+        .edit-user{
+          padding-left: 5px;
+        }
+        .icon{
+          color: $white;
+        }
+      }
+    }
+  }
+  .groups{
+    height: calc(100vh - 100px);
+    background-color:#2f3e51; 
+    padding: 20px 20px 0;
+    font-weight:bold;
+    .group{
+      color: $white;
+      padding-bottom: 40px;
+      height: 91px;
+        .name{
+            font-size: $side_group_name;
+            margin-bottom: 5px;
+        }
+        .latest-massage{
+            font-size: $side_group_message;
+        }
+      }
+  }
+}
