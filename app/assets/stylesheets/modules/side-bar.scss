@@ -37,18 +37,21 @@
     height: calc(100vh - 100px);
     background-color:#2f3e51; 
     padding: 20px 20px 0;
-    font-weight:bold;
+    text-emphasis: none;
     .group{
-      color: $white;
       padding-bottom: 40px;
       height: 91px;
-        .name{
-            font-size: $side_group_name;
-            margin-bottom: 5px;
-        }
-        .latest-massage{
-            font-size: $side_group_message;
-        }
+      .name{
+        color: $white;
+        font-size: $side_group_name;
+        margin-bottom: 5px;
+        text-decoration: none;
       }
+      .message{
+        color: $white;
+        font-size: $side_group_message;
+        text-decoration: none;
+      }
+    }
   }
 }
