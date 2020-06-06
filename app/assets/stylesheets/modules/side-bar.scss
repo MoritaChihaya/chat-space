@@ -38,19 +38,20 @@
     background-color:#2f3e51; 
     padding: 20px 20px 0;
     text-emphasis: none;
+    .link{
+      text-decoration: none;
+    }
     .group{
-      padding-bottom: 40px;
-      height: 91px;
+      margin-bottom: 40px;
+      height: 45px;
       .name{
         color: $white;
         font-size: $side_group_name;
         margin-bottom: 5px;
-        text-decoration: none;
       }
       .message{
         color: $white;
         font-size: $side_group_message;
-        text-decoration: none;
       }
     }
   }

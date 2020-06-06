@@ -1,27 +1,23 @@
 .Chat
  .header
   .left-box
-   %p.--group-name test
-   %p.--group-member Member:masa
+   %p.--group-name
+    = @group.name
+   %ul.--member-list
+    %li Member：
+    - @group.users.each do |user|
+     %li.--member-name
+      = user.name
   .right-box
-   = link_to groups/(current_group)/edit, class: "edit-btn" do 
+   = link_to edit_group_path(@group), class: "edit-btn" do 
     Edit
- .massages
-  .massage
-   .upper-info
-    %p.--user-name masa,1
-    %p.--posting-date 2019/11/20(Wed) 17:43:01
-   %p.--text おはよう！,1
-  .massage
-   .upper-info
-    %p.--user-name masa,1
-    %p.--posting-date 2019/11/20(Wed) 17:43:01
-   %p.--text おはよう！,1
+ .messages
+  = render partial: 'message', collection: @messages
  .form
-  %form.new-message
-   .text-area
-    %input.text{:name => "text", :placeholder => "type a message", :type => "text", :value => ""}/
-    %label.image
+  = form_for [@group, @message] do |f|
+   .form__mask
+    = f.text_field :content, class: 'message_content', placeholder: 'type a message'
+    = f.label :image, class: 'icon' do
      = icon('far', 'image')
-    %input.hidden{:name => "picture", :placeholder => "type a message", :type => "file", :value => ""}/
-   %input.send-btn{:type => "submit", :value => "Send"}
+     = f.file_field :image, class: 'hidden'
+   = f.submit 'Send', class: 'send-btn'

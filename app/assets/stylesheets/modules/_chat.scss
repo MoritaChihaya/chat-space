@@ -1,6 +1,7 @@
 .Chat{
   width: calc(100% - 300px);
   height: 100%;
+
   .header{
     background-color:$white;
     height: 100px;
@@ -14,10 +15,14 @@
         color: $black;
         font-size: 20px;
       }
-      .--group-member{
+      .--member-list{
         margin-top: 15px;
         color: $gray;
         font-size: 12px;
+        display: flex;
+      }
+      .--member-name{
+        margin-right: 5px;
       }
     }
     .right-box{
@@ -37,32 +42,34 @@
     }
   }
 
-  .massages{
+  .messages{
     background-color:#fafafa;
-    height: calc(100% - 190px);
+    height: calc(100vh - 190px);
     padding:35px 40px;
-    .massage{
+    overflow: scroll;
+    .message{
       height: 109px;
-      padding-bottom: 46px;
+      padding-bottom: 40px;
       .upper-info{
         height: 16px;
         margin-bottom: 12px;
         display: flex;
         line-height: 16px; 
-        .--user-name{
+        &--user-name{
           color: $black;
           font-size: 16px;
+          font-weight: bold;
         }
-        .--posting-date{
+        &--posting-date{
           color: $gray;
           font-size: 12px;
           margin-left: 10px;
         }
       }
-      .--text{
-        color: $dark-gray;
-        font-size: 14px;
-        line-height: 14px;
+      .lower-message{
+         color: $dark-gray;
+         font-size: 14px;
+         line-height: 14px;
       }
     }
   }
@@ -71,34 +78,36 @@
     height: 90px;
     padding: 20px 40px;
     background-color:#d2d2d2;
-    .new-message{
+    .new_message{
       width: 100%;
-      height: 50px;
+      height: 50px;  
       color: $dark-gray;
       border-style: none;
       display: flex;
-      .text-area{
-      color: $gray;
-      background-color: $white;
-      position: relative;
-      display: flex;
-        .text{
+      .form__mask{
+        width: 100%;
+        position: relative;
+        .message_content{
           width: 100%;
+          height: 50px;
+          color: $gray;
+          display: flex;
           padding: 0 40px 0 10px;
+          color: $dark-gray;
         }
-        .image{
-        color: #000000;
-        font-size: 1.3rem;
-        position: absolute;
-        top: 10px;
-        right: 10px;    
-        cursor: pointer;
+        .icon{
+           font-size: 1.3rem;
+           cursor: pointer;
+           position: absolute;
+           top: 10px;
+           right: 10px; 
+           .hidden{
+             display: none;
+           }  
+        }
       }
     }
-    .hidden{
-      display: none;
-    }
-  }
+
     .send-btn{
       width: 100px;
       height: 50px;
@@ -110,4 +119,4 @@
       line-height: 50px;
     }
   }
-}  
+} 
