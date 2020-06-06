@@ -1,20 +1,20 @@
 .Side-bar
   .left-header
     .box
-      %p.user-name 
+      %p.user-name
         = current_user.name
       %ul.menu
         %li.new-group
-          = link_to "groups/new", class:"icon" do
+          = link_to new_group_path, class:"icon" do
             = icon('far', 'edit')
         %li.edit-user
           = link_to edit_user_path(current_user), class:"icon" do
             = icon('fas', 'cog')
   .groups
     - current_user.groups.each do |group|
-      .group
-        = link_to '#' do
-          .name
+      = link_to group_messages_path(group), class:"link" do
+        .group
+          %p.name
             = group.name
-          .message
-            メッセージはまだありません。
+          %p.message
+            = group.show_last_message
