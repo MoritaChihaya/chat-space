@@ -4,12 +4,12 @@ $(function(){
       var html =
         `<div class="message">
           <div class="upper-info">
-            <div class="upper-info--user-name">
+            <p class="upper-info--user-name">
               ${message.user_name}
-            </div>
-            <div class="upper-info--posting-date">
+            </p>
+            <p class="upper-info--posting-date">
               ${message.created_at}
-            </div>
+            </p>
           </div>
           <div class="lower-message">
             <p class="lower-message__content">
@@ -23,12 +23,12 @@ $(function(){
       var html =
       `<div class="message">
         <div class="upper-info">
-          <div class="upper-info--user-name">
+          <p class="upper-info--user-name">
             ${message.user_name}
-          </div>
-          <div class="upper-info--posting-date">
+          </p>
+          <p class="upper-info--posting-date">
             ${message.created_at}
-          </div>
+          </p>
         </div>
         <div class="lower-message">
           <p class="lower-message__content">
