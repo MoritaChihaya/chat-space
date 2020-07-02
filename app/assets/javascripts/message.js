@@ -11,11 +11,9 @@ $(function(){
               ${message.created_at}
             </p>
           </div>
-          <div class="lower-message">
             <p class="lower-message__content">
               ${message.content}
             </p>
-          </div>
           <img src=${message.image} >
         </div>`
       return html;
@@ -30,11 +28,9 @@ $(function(){
             ${message.created_at}
           </p>
         </div>
-        <div class="lower-message">
           <p class="lower-message__content">
             ${message.content}
           </p>
-        </div>
       </div>`
       return html;
     };
