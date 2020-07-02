@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message){
     if (message.image){
       var html =
-        `<div class="message" date-message-id=${message.id}>
+        `<div class="message" data-message-id=${message.id}>
           <div class="upper-info">
             <p class="upper-info--user-name">
               ${message.user_name}
@@ -21,7 +21,7 @@ $(function(){
       return html;
     }else{
       var html =
-      `<div class="message" date-message-id=${message.id}>
+      `<div class="message" data-message-id=${message.id}>
         <div class="upper-info">
           <p class="upper-info--user-name">
             ${message.user_name}
@@ -70,8 +70,8 @@ $(function(){
     $.ajax({
       url: "api/messages",
       type: 'get',
-      dateType: 'json',
-      date: {id: last_message_id}
+      dataType: 'json',
+      data: {id: last_message_id}
     })
     .done(function(messages){
       if (messages.length !== 0){
@@ -80,7 +80,7 @@ $(function(){
           insertHTML += buildHTML(message)
         });
         $('.messages').append(insertHTML);
-        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight}, 'fast');
       }
     })
     .fail(function(){
